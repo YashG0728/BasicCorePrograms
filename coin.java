@@ -1,34 +1,23 @@
-import java.util.Random;
 import java.util.Scanner;
 
-public class coin {
+public class Leapyear {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int a,head = 0,tail = 0,i;
-		double tempflip=0.5;
-		System.out.println("Num of time to flip coin :");
-		a = s.nextInt();
-		for( i=0;i<a;i++) {
-		Random r = new Random();
-		double dice = r.nextDouble(1);
+		Scanner sc = new Scanner(System.in);
+		
+           System.out.println("Enter your year here ");
+           
+        double input = sc.nextDouble();
 
-		if (dice < tempflip) {
-			tail +=1;
-		} 
-		else {
-			head +=1;
-		}
+        if (input % 4 == 0 && input % 400 == 0) {
+        	
+           System.out.println("Yes it is a leap year");}
 
+        else if (input % 4 == 0  && input%100 != 0){
+        	
+            System.out.println("Yes it is a leap year"); }
 
-		}
-		System.out.println("Num of Head is " +head);
-		System.out.println("Num of Tail is " +tail);
-		double perhead = (head*100)/a;
-		double pertail=(tail*100)/a;
-
-		System.out.println(perhead);
-		System.out.println(pertail);
+        else System.out.println("No it is not a leap year");	
 	}
 
 }
